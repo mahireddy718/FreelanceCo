@@ -1,0 +1,32 @@
+{
+  "name": "baackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "@fingerprintjs/fingerprintjs-pro": "^3.12.4",
+    "@google/generative-ai": "^0.24.1",
+    "@sendinblue/client": "^3.3.1",
+    "@upstash/redis": "^1.35.8",
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "cloudinary": "^2.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "is-disposable-email": "^0.0.1",
+    "joi": "^18.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.4",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.11",
+    "razorpay": "^2.9.6",
+    "socket.io": "^4.8.1",
+    "svg-captcha": "^1.4.0",
+    "uuid": "^9.0.1"
+  }
+}

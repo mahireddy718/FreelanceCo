@@ -1,0 +1,15 @@
+node_modules/
+migrations/
+scripts/
+tests/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.vscode/
+.idea/
+frontend/env
+frontend/node_modules/
+backend/node_modules/
+backend/.env

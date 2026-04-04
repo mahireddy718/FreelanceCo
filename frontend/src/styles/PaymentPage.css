@@ -1,0 +1,250 @@
+.payment-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.payment-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    overflow: hidden;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.payment-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.payment-header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.payment-header p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.payment-details {
+    padding: 2rem;
+}
+
+.project-info {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.project-info h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.project-info h3 {
+    font-size: 1.3rem;
+    color: #1a1a1a;
+    margin: 0.5rem 0;
+}
+
+.freelancer-name {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0.5rem 0;
+}
+
+.amount-info {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.amount-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.amount-row.total {
+    border-top: 2px solid #ddd;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+}
+
+.amount {
+    font-weight: 700;
+    color: #667eea;
+    font-size: 1.2rem;
+}
+
+.amount-row.total .amount {
+    font-size: 1.5rem;
+}
+
+.error-message {
+    background: #fee;
+    border: 1px solid #fcc;
+    color: #c33;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.error-message i {
+    font-size: 1.2rem;
+}
+
+.pay-button {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.pay-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.pay-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.pay-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.payment-security {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.payment-security i {
+    color: #4caf50;
+    font-size: 1.1rem;
+}
+
+.cancel-button {
+    width: 100%;
+    background: transparent;
+    color: #666;
+    border: 2px solid #ddd;
+    padding: 0.875rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-button:hover:not(:disabled) {
+    border-color: #bbb;
+    color: #444;
+    background: #f9f9f9;
+}
+
+.cancel-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.loading {
+    text-align: center;
+    padding: 3rem;
+    color: white;
+    font-size: 1.1rem;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .payment-page {
+        padding: 1rem;
+    }
+
+    .payment-container {
+        border-radius: 12px;
+    }
+
+    .payment-header {
+        padding: 1.5rem;
+    }
+
+    .payment-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .payment-details {
+        padding: 1.5rem;
+    }
+
+    .project-thumbnail {
+        height: 150px;
+    }
+
+    .amount-info {
+        padding: 1rem;
+    }
+
+    .pay-button {
+        font-size: 1rem;
+        padding: 0.875rem 1.5rem;
+    }
+}
