@@ -609,7 +609,7 @@ This project is **private and proprietary**.
 
 ## 👤 Author
 
-**Meraz Haque**
+**Mahendra Reddy**
 
 For questions or support, please contact the development team.
 
