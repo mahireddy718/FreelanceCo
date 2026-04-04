@@ -9,7 +9,6 @@ import SEOHelmet from '../components/SEOHelmet';
 import { Turnstile } from '@marsidev/react-turnstile';
 
 export default function Login() {
-    console.log('Turnstile site key:', import.meta.env.VITE_TURNSTILE_SITE_KEY);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
