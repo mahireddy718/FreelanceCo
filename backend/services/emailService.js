@@ -6,8 +6,13 @@ const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 const apiKey = apiInstance.authentications['apiKey'];
 apiKey.apiKey = process.env.BREVO_API_KEY;
 
+const smtpHost = process.env.EMAIL_HOST || (process.env.GMAIL_USER ? 'smtp.gmail.com' : '');
+const smtpPort = Number(process.env.EMAIL_PORT || (process.env.GMAIL_USER ? 587 : 0)) || 587;
+const smtpUser = process.env.EMAIL_USER || process.env.GMAIL_USER;
+const smtpPass = process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD;
+
 const hasBrevoConfig = Boolean(process.env.BREVO_API_KEY && process.env.BREVO_SENDER_EMAIL);
-const hasSmtpConfig = Boolean(process.env.EMAIL_HOST && process.env.EMAIL_PORT && process.env.EMAIL_USER && process.env.EMAIL_PASS);
+const hasSmtpConfig = Boolean(smtpHost && smtpUser && smtpPass);
 
 // Verify API configuration on startup
 if (!process.env.BREVO_API_KEY) {
@@ -22,12 +27,12 @@ if (!hasSmtpConfig) {
 
 const createSmtpTransport = () => {
     return nodemailer.createTransport({
-        host: process.env.EMAIL_HOST,
-        port: Number(process.env.EMAIL_PORT) || 587,
-        secure: String(process.env.EMAIL_PORT) === '465',
+        host: smtpHost,
+        port: smtpPort,
+        secure: String(smtpPort) === '465',
         auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS
+            user: smtpUser,
+            pass: smtpPass
         }
     });
 };
@@ -105,7 +110,7 @@ const sendWithSmtp = async (email, name, otp) => {
     }
 
     const transporter = createSmtpTransport();
-    const fromAddress = process.env.EMAIL_USER;
+    const fromAddress = smtpUser;
 
     const info = await transporter.sendMail({
         from: `"${process.env.BREVO_SENDER_NAME || 'FreelanceCo'}" <${fromAddress}>`,
