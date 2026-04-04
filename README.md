@@ -1,4 +1,4 @@
-# Prolance - Modern Freelancing Platform
+## Prolance - Modern Freelancing Platform
 
 A full-stack freelancing marketplace platform built with cutting-edge technologies including React 19, Node.js/Express, MongoDB, real-time chat, AI-powered features, and integrated payment processing.
 
@@ -6,7 +6,7 @@ A full-stack freelancing marketplace platform built with cutting-edge technologi
 ![Node](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen)
 ![React](https://img.shields.io/badge/react-19.2.0-blue)
 
-## 📋 Table of Contents
+# 📋 Table of Contents
 - [Features](#-features)
 - [Prerequisites](#-prerequisites)
 - [Technology Stack](#-technology-stack)
