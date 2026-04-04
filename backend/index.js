@@ -39,7 +39,6 @@ const allowedOrigins = [
     'http://localhost:3000',
     process.env.FRONTEND_URL
 ].filter(Boolean);
-console.log('Allowed origins:', allowedOrigins);
 app.use(cors({
     origin: function (origin, callback) {
         // Allow requests with no origin (like mobile apps or curl requests)
