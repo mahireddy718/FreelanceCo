@@ -1,0 +1,31 @@
+# Robots.txt for Prolance
+# https://prolance.meraz.me/robots.txt
+
+# Allow all bots to crawl public pages
+User-agent: *
+
+# Disallow authentication and private pages
+Disallow: /login
+Disallow: /signup
+Disallow: /forgot-password
+Disallow: /verify-otp
+Disallow: /reset-password
+Disallow: /dashboard
+Disallow: /settings
+Disallow: /messages
+Disallow: /my-projects
+Disallow: /post-project
+Disallow: /payment/
+Disallow: /payment-history
+Disallow: /project-workspace/
+Disallow: /admin
+
+# Allow public pages
+Allow: /
+Allow: /projects
+Allow: /freelancers
+Allow: /support
+Allow: /user/
+
+# Sitemap location
+Sitemap: https://prolance.meraz.me/sitemap.xml

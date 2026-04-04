@@ -605,11 +605,11 @@ Set in deployment platform:
 ## 📄 License
 
 This project is **private and proprietary**.  
-© 2025 Meraz Haque. All rights reserved.
+© 2025 Mahendra Reddy. All rights reserved.
 
 ## 👤 Author
 
-**Meraz Haque**
+**Mahendra Reddy**
 
 For questions or support, please contact the development team.
 
@@ -618,3 +618,4 @@ For questions or support, please contact the development team.
 **Last Updated**: December 2025  
 **Version**: 2.0.0  
 **Status**: Active Development 🚀
+
