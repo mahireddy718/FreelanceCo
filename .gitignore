@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+dist/
+build/
+coverage/
+
+# Environment files
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+
+# Logs and local-only files
+*.log
+.DS_Store
+.vscode/
+.idea/
