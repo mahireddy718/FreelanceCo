@@ -9,7 +9,10 @@ apiKey.apiKey = process.env.BREVO_API_KEY;
 const smtpHost = process.env.EMAIL_HOST || (process.env.GMAIL_USER ? 'smtp.gmail.com' : '');
 const smtpPort = Number(process.env.EMAIL_PORT || (process.env.GMAIL_USER ? 587 : 0)) || 587;
 const smtpUser = process.env.EMAIL_USER || process.env.GMAIL_USER;
-const smtpPass = process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD;
+const gmailAppPassword = process.env.GMAIL_APP_PASSWORD
+    ? process.env.GMAIL_APP_PASSWORD.replace(/\s+/g, '')
+    : '';
+const smtpPass = process.env.EMAIL_PASS || gmailAppPassword;
 
 const hasBrevoConfig = Boolean(process.env.BREVO_API_KEY && process.env.BREVO_SENDER_EMAIL);
 const hasSmtpConfig = Boolean(smtpHost && smtpUser && smtpPass);
@@ -119,7 +122,8 @@ const sendWithSmtp = async (email, name, otp) => {
         html: buildOtpEmailHtml(name, otp)
     });
 
-    console.log('✓ OTP email sent successfully via SMTP:', info.messageId || 'sent');
+    const provider = smtpHost.includes('gmail') || smtpUser === process.env.GMAIL_USER ? 'Gmail' : 'SMTP';
+    console.log(`✓ OTP email sent successfully via ${provider}:`, info.messageId || 'sent');
     return {
         success: true,
         messageId: info.messageId || 'sent'
@@ -161,7 +165,10 @@ const sendOTPEmail = async (email, name, otp) => {
         console.error('Error details:', error.message);
 
         if (hasSmtpConfig) {
-            console.log('↺ Falling back to SMTP email delivery');
+            const fallbackProvider = smtpHost.includes('gmail') || smtpUser === process.env.GMAIL_USER
+                ? 'Gmail (GMAIL_USER/GMAIL_APP_PASSWORD)'
+                : 'SMTP';
+            console.log(`↺ Falling back to ${fallbackProvider} email delivery`);
             return await sendWithSmtp(email, name, otp);
         }
 
