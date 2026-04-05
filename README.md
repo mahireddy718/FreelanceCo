@@ -615,7 +615,7 @@ For questions or support, please contact the development team.
 
 ---
 
-**Last Updated**: December 2025  
+**Last Updated**: April 2026  
 **Version**: 2.0.0  
 **Status**: Active Development 🚀
 
