@@ -605,7 +605,7 @@ Set in deployment platform:
 ## 📄 License
 
 This project is **private and proprietary**.  
-© 2025 Mahendra Reddy. All rights reserved.
+© 2026 Mahendra Reddy. All rights reserved.
 
 ## 👤 Author
 
